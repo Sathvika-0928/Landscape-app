@@ -1,22 +1,28 @@
-<p>
-diagrams-page works!
-</p>
 <div class="left">
-Diagram
-<gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='diagramNodeData'
-  [linkDataArray]='diagramLinkData' [divClassName]='diagramDivClassName' [modelData]='diagramModelData'
-  [skipsDiagramUpdate]='skipsDiagramUpdate' (modelChange)='diagramModelChange($event)'>
-</gojs-diagram>
-<div id="infoBoxHolder">
-  <!-- Initially Empty, it is populated when updateInfoBox is called -->
-</div>
-<button (click)="fitToScreen()">Toggle Fit to Screen (use [shift and Z] shorcut also) </button> &nbsp;
-<button (click)="fitToRectScreen()">Toggle Fit to Rect Screen  </button>
+  Diagram
+  <gojs-diagram
+    #myDiagram
+    [initDiagram]="initDiagram"
+    [nodeDataArray]="diagramNodeData"
+    [linkDataArray]="diagramLinkData"
+    [divClassName]="diagramDivClassName"
+    [modelData]="diagramModelData"
+    [skipsDiagramUpdate]="skipsDiagramUpdate"
+    (modelChange)="diagramModelChange($event)"
+  >
+  </gojs-diagram>
+  <div id="infoBoxHolder">
+    <!-- Initially Empty, it is populated when updateInfoBox is called -->
+  </div>
+  <button (click)="fitToScreen()">
+    Toggle Fit to Screen (use [shift and Z] shorcut also)
+  </button>
+  &nbsp;
+  <button (click)="fitToRectScreen()">Toggle Fit to Rect Screen</button>
 </div>
 <div class="left">
-<div style="width:100%">
-
-  <!-- <div style="display: inline-block; vertical-align: bottom; border: 2px solid green">
+  <div style="width:100%">
+    <!-- <div style="display: inline-block; vertical-align: bottom; border: 2px solid green">
     <b>Legends</b>
     <table>
       <tr>
@@ -58,13 +64,17 @@ Diagram
     </table>
 
   </div> -->
-</div>
-<script>
-  goCode("diagramPre", 300, 200, go.Diagram, "diagramSpan");
-</script>
-<div class="left">
-  Overview
-  <gojs-overview #myOverview [initOverview]='initOverview' [divClassName]='oDivClassName'
-    [observedDiagram]='observedDiagram'></gojs-overview>
-</div>
+  </div>
+  <script>
+    goCode("diagramPre", 300, 200, go.Diagram, "diagramSpan");
+  </script>
+  <div class="left">
+
+    <gojs-overview
+      #myOverview
+      [initOverview]="initOverview"
+      [divClassName]="oDivClassName"
+      [observedDiagram]="observedDiagram"
+    ></gojs-overview>
+  </div>
 </div>
