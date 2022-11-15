@@ -1,0 +1,70 @@
+<p>
+diagrams-page works!
+</p>
+<div class="left">
+Diagram
+<gojs-diagram #myDiagram [initDiagram]='initDiagram' [nodeDataArray]='diagramNodeData'
+  [linkDataArray]='diagramLinkData' [divClassName]='diagramDivClassName' [modelData]='diagramModelData'
+  [skipsDiagramUpdate]='skipsDiagramUpdate' (modelChange)='diagramModelChange($event)'>
+</gojs-diagram>
+<div id="infoBoxHolder">
+  <!-- Initially Empty, it is populated when updateInfoBox is called -->
+</div>
+<button (click)="fitToScreen()">Toggle Fit to Screen (use [shift and Z] shorcut also) </button> &nbsp;
+<button (click)="fitToRectScreen()">Toggle Fit to Rect Screen  </button>
+</div>
+<div class="left">
+<div style="width:100%">
+
+  <!-- <div style="display: inline-block; vertical-align: bottom; border: 2px solid green">
+    <b>Legends</b>
+    <table>
+      <tr>
+        <td>
+          <span [ngStyle]="{'background':diagramModelData.groupColor, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}" >&nbsp;</span><span style="margin:5px;; float:left;"> Parent Group</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span [ngStyle]="{'background':diagramModelData.childGroupCOlor, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}">&nbsp;</span><span style="margin:5px;;float:left;"> Sub Group</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span [ngStyle]="{'background':diagramModelData.nodeColor, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}" >&nbsp;</span><span style="margin:5px;float:left;"> Element</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <span [ngStyle]="{'background':diagramModelData.groupHoverColor, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}" >&nbsp;</span><span style="margin:5px;; float:left;"> Parent Group Hover</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span [ngStyle]="{'background':diagramModelData.childGroupHoverCOlor, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}" >&nbsp;</span><span style="margin:5px;; float:left;"> Sub Group Hover</span>
+        </td>
+      </tr>
+
+    </table>
+    <b>Legend Color</b>
+    <table>
+      <tr *ngFor="let item of legends | keyvalue">
+        <td>
+          <span [ngStyle]="{'background':item.value, 'font-weight':'bold', 'width':'20px', 'margin':'5px', 'float':'left'}" >&nbsp;</span><span style="margin:5px;; float:left;"> {{item.key}}</span>
+        </td>
+      </tr>
+
+    </table>
+
+  </div> -->
+</div>
+<script>
+  goCode("diagramPre", 300, 200, go.Diagram, "diagramSpan");
+</script>
+<div class="left">
+  Overview
+  <gojs-overview #myOverview [initOverview]='initOverview' [divClassName]='oDivClassName'
+    [observedDiagram]='observedDiagram'></gojs-overview>
+</div>
+</div>
